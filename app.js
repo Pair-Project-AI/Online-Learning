@@ -6,6 +6,8 @@ const routes = require("./routes");
 
 app.set('view engine', 'ejs');
 
+app.use(express.static("public"))
+
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
