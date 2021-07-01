@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <%- include("./navbar")%>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="container py-5">
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="col-5">
+                    <div class="card p-5">
+                        <div class="text-center">
+                            <img src="/assets/logo/kode-id.png" class="rounded" alt="Hacktiv8" height="45">
+                        </div>
+                        <br/>
+                        <form action="/login" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                    <input type="email" name="email" class="form-control" id="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" id="password">
+                                </div>
+                                <button type="submit" class="btn btn-primary d-block">Login</button>
+                                <br/>
+                                <small>You don't have an account yet? <a href="/register">REGISTER</a></small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

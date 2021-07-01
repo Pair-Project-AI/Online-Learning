@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <title>Home Page</title>
+    </head>
+    <body>
+        <%- include("./navbar")%>
+        <br/>
+        <br/>
+        <!-- Body -->
+        <div class="container mt-5 my-5">
+            <div class="row">
+                <% data.forEach(el => {%>
+                    <div class="card mx-1 my-2" style="width: 17rem;">
+                        <img src="/assets/content/javascript.jpg" class="card-img py-3" alt="Javacript">
+                        <div class="card-body">
+                            <a href="/show-content.html"><p style="font-size: 20px;" class="haha"><b><%= el.title%></b></p></a>
+                            <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 12px;">Hacktiv8 Team</p>
+                                </div>
+                                <div class="col">
+                                    <p style="font-size: 12px;"><%= el.currency()%></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% })%>
+            </div>
+        </div>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

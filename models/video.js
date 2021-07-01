@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Video.belongsToMany(models.Tag, {through: models.Catalog, foreignKey: "VideoId"});
-      Video.belongsToMany(models.User, {through: models.Study, foreignKey: "VideoId"})
+      Video.belongsToMany(models.User, {through: models.Study, foreignKey: "VideoId"});
+      Video.belongsTo(models.Subject, {foreignKey: "SubjectId"})
+    }
+    currency(){
+      return `Rp. ${this.price.toLocaleString("id-ID")}`
     }
   };
   Video.init({
