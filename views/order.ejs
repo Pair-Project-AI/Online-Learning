@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <title>Order Payment</title>
+    </head>
+    <body>
+        <%- include("./navbar")%>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="container py-5">
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="col-5">
+                    <div class="card shadow-lg p-5">
+                        <h4 class="text-center mb-3"><b>PAYMENT DETAILS</b></h4>
+                        <div class="alert alert-primary">
+                            <small>To activate the class you have chosen, please make a payment to the following account number.</small>
+                            <small><b>BCA No.Rek: 9897893783</b></small>
+                            <hr>
+                            <% let totalPrice = 0;%>
+                            <% data.forEach(el => {%>
+                                <% totalPrice += el.price%>
+                            <% })%>
+                            <small>Total: <b><%= currency(totalPrice)%></b></small>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="file" class="form-label">Upload proof of transfer</label>
+                                    <input type="file" class="form-control" id="file">
+                                </div>
+                                <button type="submit" class="btn btn-primary d-block">UPLOAD FILE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

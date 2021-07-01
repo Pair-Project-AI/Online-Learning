@@ -11,22 +11,9 @@
     <body>
         <%- include("./navbar")%>
         <br/>
-        <!-- Hero -->
-        <div class="container-fluid py-5" style="height: 550px; background-image: url(/assets/hero/hero-ku.jpg);">
-            <div class="px-4 py-5 my-5 text-center">
-                <h1 class="display-7 fw-bold py-4" style="color: white;">Improve Ability and <br/>Self Competence</h1>
-                <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4" style="color: white;"><b>various courses in programming, marketing, business, to personal development!</b></p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="/register" type="button" class="btn btn-danger btn-lg px-4 gap-3">Register Free</a>
-                </div>
-                </div>
-            </div>
-        </div>
         <!-- Body -->
         <div class="container py-5">
-            <h2 class="text-center py-2"><b>Learn Online at HERE</b></h2>
-            <p class="text-center py-1 mb-3">E-learning platform that provides a variety of classes to improve competence<br/>and competitiveness in the world of work.</p>
+            <h2 class="text-center py-2"><b>My Courses</b></h2>
         </div>
         <div class="album">
             <div class="container mb-lg-5">
@@ -39,11 +26,8 @@
                                     <a href="/show-content/<%= el.id%>" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b><%= el.name%></b></p></a>
                                     <div class="d-flex justify-content-between align-items-center mt-4">
                                         <small class="text-muted"><i class="fas fa-sm fa-user"></i> OnLearn Team</small>
-                                        <% let totalPrice = 0;%>
-                                        <% el.Videos.forEach(vid => {%>
-                                            <% totalPrice += vid.price%>
-                                        <% })%>
-                                        <small class="text-muted"><i class="fas fa-sm fa-money-bill-wave-alt"></i> <%= currency(totalPrice)%></small>
+                                        <a href="/lesson/<%= data.id%>" class="btn btn-sm btn-primary">START</a>
+                                        <a href="/delete/<%= data.id%>" class="btn btn-sm btn-danger">FINISH</a>
                                     </div>
                                 </div>
                             </div>

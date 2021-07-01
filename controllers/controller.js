@@ -1,12 +1,19 @@
-const {User, Video} = require("../models");
+const {User, Video, Subject} = require("../models");
+const currency = require("../helper/totalPrice")
 
 class Controller {
     static homePage(req, res){
-        Video
-            .findAll()
+        Subject
+            .findAll({
+                include: [{
+                    model: Video,
+                    attributes: ["price"]
+                }]
+            })
             .then(data => {
+                console.log(data[0].Videos)
                 const isLogin = req.session.isLogin;
-                res.render("index", {data, isLogin})
+                res.render("index", {data, isLogin, currency})
             })
             .catch(err => res.send(err))
     }
@@ -47,6 +54,54 @@ class Controller {
         .then(() => {
                 req.session.isLogin = true;
                 res.redirect("/")
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static showContent(req, res){
+        const id = req.params.id;
+        Video
+            .findAll({
+                include: Subject,
+                where: {
+                    SubjectId: id,
+                }
+            })
+            .then(data => {
+                res.render("show-content", {data, currency})
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static orderPay(req, res){
+        const id = req.params.id;
+        Video
+            .findAll({
+                where: {
+                    SubjectId: id,
+                }
+            })
+            .then(data => {
+                res.render("order", {data, currency})
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static myCourse(req, res){
+        Subject
+            .findAll({
+                where: {
+                    paid: true,
+                }
+            })
+            .then(data => {
+                res.render("myCourse", {data})
             })
             .catch(err => {
                 res.send(err)

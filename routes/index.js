@@ -20,8 +20,14 @@ router.post("/register", Controller.registerSave);
 
 router.get("/", Controller.homePage);
 
-router.use(proceed)
+router.get("/show-content/:id", Controller.showContent);
 
-router.get("/logout", Controller.logOut)
+router.get("/order/:id", Controller.orderPay);
+
+router.get("/my-course", Controller.myCourse)
+// router.use(proceed)
+
+router.get("/logout", Controller.logOut);
+
 
 module.exports = router
