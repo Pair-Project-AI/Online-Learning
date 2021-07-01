@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgb(231, 234, 237);
+}
+
+nav {
+  -webkit-box-shadow: 3px -2px 25px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px -2px 25px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px -2px 25px -6px rgba(0, 0, 0, 0.75);
+}
+
+#card-shadow {
+  -webkit-box-shadow: 2px 1px 30px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 1px 30px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 1px 30px -8px rgba(0, 0, 0, 0.75);
+}
+
+#haha {
+  font-size: 300px;
+  color: brown;
+}
