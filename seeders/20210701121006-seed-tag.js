@@ -11,12 +11,12 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    let data = require("../data/video.json");
+    let data = require("../data/tag.json");
     data.forEach(el => {
       el.createdAt = new Date();
       el.updatedAt = new Date();
     })
-    return queryInterface.bulkInsert("Videos", data, {})
+    return queryInterface.bulkInsert("Tags", data, {})
   },
 
   down: (queryInterface, Sequelize) => {
@@ -26,6 +26,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete("Videos", null, {})
+    return queryInterface.bulkDelete("Tags", data, {})
   }
 };
