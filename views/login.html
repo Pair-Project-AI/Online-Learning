@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./public/css/custom.css">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="./public/assets/logo/online-learning.png" alt="" height="45">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b>My Courses</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><b>Catalog</b></a>
+                    </li>
+                    </ul>
+                    <!-- <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form> -->
+                    <!-- <a href="/login.html" class="btn btn-primary">Login</a> -->
+                </div>
+            </div>
+        </nav>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="container py-5">
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="col-5">
+                    <div class="card shadow-lg p-5">
+                        <div class="text-center">
+                            <img src="./public/assets/logo/online-learning.png" class="rounded" alt="Hacktiv8" height="45">
+                        </div>
+                        <br/>
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password">
+                                </div>
+                                <button type="submit" class="btn btn-primary d-block">Login</button>
+                                <br/>
+                                <small>You don't have an account yet? <a href="/register.html">REGISTER</a></small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./public/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
