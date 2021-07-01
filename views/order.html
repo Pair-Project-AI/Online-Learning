@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./public/css/bootstrap.min.css">
         <link rel="stylesheet" href="./public/css/custom.css">
-        <title>Register Page</title>
+        <title>Order Payment</title>
     </head>
     <body>
         <!-- Navbar -->
@@ -44,30 +44,19 @@
             <div class="container-fluid d-flex justify-content-center">
                 <div class="col-5">
                     <div class="card shadow-lg p-5">
-                        <div class="text-center">
-                            <img src="./public/assets/logo/online-learning.png" class="rounded" alt="Hacktiv8" height="45">
+                        <h4 class="text-center mb-3"><b>PAYMENT DETAILS</b></h4>
+                        <div class="alert alert-primary">
+                            <small>To activate the class you have chosen, please make a payment to the following account number.</small>
+                            <small><b>BCA No.Rek: 9897893783</b></small>
+                            <hr>
+                            <small>Total: <b>Rp. 300.000</b></small>
                         </div>
-                        <br/>
                         <form>
                             <div class="mb-3">
-                                <label for="first_name" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="first_name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="last_name" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="last_name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password">
-                            </div>
-                            <button type="submit" class="btn btn-primary d-block">Register</button>
-                            <br/>
-                            <small>You already have an account? <a href="/login.html">LOGIN</a></small>
+                                <label for="file" class="form-label">Upload proof of transfer</label>
+                                    <input type="file" class="form-control" id="file">
+                                </div>
+                                <button type="submit" class="btn btn-primary d-block">UPLOAD FILE</button>
                             </div>
                         </form>
                     </div>

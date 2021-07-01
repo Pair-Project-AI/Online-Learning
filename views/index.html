@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./public/css/bootstrap.min.css">
         <link rel="stylesheet" href="./public/css/custom.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
         <title>Home Page</title>
     </head>
     <body>
@@ -12,7 +13,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="/index.html">
-                    <img src="./public/assets/logo/kode-id.png" alt="" height="45">
+                    <img src="./public/assets/logo/online-learning.png" alt="" height="45">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,99 +21,112 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/index.html"><b>Home</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My Courses</a>
+                        <a class="nav-link" href="#"><b>My Courses</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Catalog</a>
+                        <a class="nav-link" href="#"><b>Catalog</b></a>
                     </li>
                     </ul>
-                    <!-- <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form> -->
-                    <a href="/login.html" class="btn btn-primary">Login</a>
+                    <a href="/login.html" class="btn btn-danger mx-3">LOGIN</a>
+                    <a href="/register.html" class="btn btn-danger">REGISTER</a>
                 </div>
             </div>
         </nav>
         <br/>
-        <br/>
+        <!-- Hero -->
+        <div class="container-fluid py-5" style="height: 550px; background-image: url(./public/assets/hero/hero-ku.jpg);">
+            <div class="px-4 py-5 my-5 text-center">
+                <h1 class="display-7 fw-bold py-4" style="color: white;">Improve Ability and <br/>Self Competence</h1>
+                <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4" style="color: white;"><b>various courses in programming, marketing, business, to personal development!</b></p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="/register.html" type="button" class="btn btn-danger btn-lg px-4 gap-3">Register Free</a>
+                </div>
+                </div>
+            </div>
+        </div>
         <!-- Body -->
-        <div class="container mt-5 my-5">
-            <div class="row">
-                <div class="card mx-1 my-2" style="width: 17rem;">
-                    <img src="./public/assets/content/javascript.jpg" class="card-img py-3" alt="Javacript">
-                    <div class="card-body">
-                        <a href="/show-content.html"><p style="font-size: 20px;" class="haha"><b>Belajar JavaScript dari Nol Banget</b></p></a>
-                        <div class="row">
-                            <div class="col">
-                                <p style="font-size: 12px;">Hacktiv8 Team</p>
-                            </div>
-                            <div class="col">
-                                <p style="font-size: 12px;">Rp. 300.000,00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mx-1 my-2" style="width: 17rem;">
-                    <img src="./public/assets/content/javascript.jpg" class="card-img py-3" alt="Javacript">
-                    <div class="card-body">
-                        <p style="font-size: 20px;" ><b>Belajar JavaScript dari Nol Banget</b></p>
-                        <div class="row">
-                            <div class="col">
-                                <p style="font-size: 12px;">Hacktiv8 Team</p>
-                            </div>
-                            <div class="col">
-                                <p style="font-size: 12px;">Rp. 300.000,00</p>
+        <div class="container py-5">
+            <h2 class="text-center py-2"><b>Learn Online at HERE</b></h2>
+            <p class="text-center py-1 mb-3">E-learning platform that provides a variety of classes to improve competence<br/>and competitiveness in the world of work.</p>
+        </div>
+        <div class="album">
+            <div class="container mb-lg-5">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="./public/assets/content/javascript.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            <div class="card-body">
+                                <a href="/show-content.html" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b>Belajar JavaScript dari Nol Banget</b></p></a>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <small class="text-muted"><i class="fas fa-sm fa-user"></i> Hacktiv8 Team</small>
+                                    <small class="text-muted"><i class="fas fa-sm fa-clock"></i> Rp. 300.000</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mx-1 my-2" style="width: 17rem;">
-                    <img src="./public/assets/content/javascript.jpg" class="card-img py-3" alt="Javacript">
-                    <div class="card-body">
-                        <p style="font-size: 20px;" ><b>Belajar JavaScript dari Nol Banget</b></p>
-                        <div class="row">
-                            <div class="col">
-                                <p style="font-size: 12px;">Hacktiv8 Team</p>
-                            </div>
-                            <div class="col">
-                                <p style="font-size: 12px;">Rp. 300.000,00</p>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="./public/assets/content/javascript.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            <div class="card-body">
+                                <a href="/show-content.html" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b>Belajar JavaScript dari Nol Banget</b></p></a>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <small class="text-muted"><i class="fas fa-sm fa-user"></i> Hacktiv8 Team</small>
+                                    <small class="text-muted"><i class="fas fa-sm fa-clock"></i> Rp. 300.000</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mx-1 my-2" style="width: 17rem;">
-                    <img src="./public/assets/content/javascript.jpg" class="card-img py-3" alt="Javacript">
-                    <div class="card-body">
-                        <p style="font-size: 20px;" ><b>Belajar JavaScript dari Nol Banget</b></p>
-                        <div class="row">
-                            <div class="col">
-                                <p style="font-size: 12px;">Hacktiv8 Team</p>
-                            </div>
-                            <div class="col">
-                                <p style="font-size: 12px;">Rp. 300.000,00</p>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="./public/assets/content/javascript.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            <div class="card-body">
+                                <a href="/show-content.html" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b>Belajar JavaScript dari Nol Banget</b></p></a>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <small class="text-muted"><i class="fas fa-sm fa-user"></i> Hacktiv8 Team</small>
+                                    <small class="text-muted"><i class="fas fa-sm fa-clock"></i> Rp. 300.000</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mx-1 my-2" style="width: 17rem;">
-                    <img src="./public/assets/content/javascript.jpg" class="card-img py-3" alt="Javacript">
-                    <div class="card-body">
-                        <p style="font-size: 20px;" ><b>Belajar JavaScript dari Nol Banget</b></p>
-                        <div class="row">
-                            <div class="col">
-                                <p style="font-size: 12px;">Hacktiv8 Team</p>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="./public/assets/content/javascript.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            <div class="card-body">
+                                <a href="/show-content.html" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b>Belajar JavaScript dari Nol Banget</b></p></a>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <small class="text-muted"><i class="fas fa-sm fa-user"></i> Hacktiv8 Team</small>
+                                    <small class="text-muted"><i class="fas fa-sm fa-clock"></i> Rp. 300.000</small>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p style="font-size: 12px;">Rp. 300.000,00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="./public/assets/content/javascript.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            <div class="card-body">
+                                <a href="/show-content.html" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b>Belajar JavaScript dari Nol Banget</b></p></a>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <small class="text-muted"><i class="fas fa-sm fa-user"></i> Hacktiv8 Team</small>
+                                    <small class="text-muted"><i class="fas fa-sm fa-clock"></i> Rp. 300.000</small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer class="text-muted py-4 bg-white">
+            <div class="container">
+                <p class="float-end mb-1">
+                    <a href="#" style="text-decoration: none; color: black;"><i class="fas fa-sm fa-arrow-up"></i> <b>Back to top</b></a>
+                </p>
+                <p class="mb-1">OnlineLearning.Com &copy; Copyright 2021.</p>
+            </div>
+        </footer>
         <script src="./public/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
