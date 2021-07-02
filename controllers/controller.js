@@ -1,4 +1,4 @@
-const {User, Video, Subject} = require("../models");
+const {User, Video, Subject, Study} = require("../models");
 const currency = require("../helper/totalPrice");
 const bcrypt = require("bcryptjs");
 
@@ -29,6 +29,7 @@ class Controller {
         User
             .findOne({where: {email}})
             .then(result => {
+                req.session.userId = result.id;
                 const hash = result.password;
                 match = bcrypt.compareSync(password,hash);
                 if(match){
@@ -155,9 +156,23 @@ class Controller {
     }
 
     static upload(req, res) {
-        res.send(req.file)
-        console.log(req.file)
-        console.log(req.body)
+        const id = req.params.id;
+        const newData = {
+            VideoId: id,
+            UserId: req.session.userId
+        }
+        Study
+            .create(newData)
+        Subject
+            .update({paid: true}, {
+                where:{id}
+            })
+            .then(() => {
+                res.redirect("/my-course")
+            })
+            .catch(err => {
+                res.send(err)
+            })
         // /public/upload/ + 16-sq.jpg
     }
 }

@@ -3,7 +3,6 @@ const router = express.Router();
 const Controller = require("../controllers/controller");
 // upload file
 const multer  = require('multer')
-var upload = multer({ storage: storage })
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './public/upload');
@@ -12,6 +11,7 @@ var storage = multer.diskStorage({
         cb(null , file.originalname);
     }
 });
+var upload = multer({ storage: storage })
 
 const proceed = (req, res, next) => {
     if(req.session.isLogin){
@@ -33,13 +33,13 @@ router.get("/", Controller.homePage);
 
 router.use(proceed);
 
-router.get("/paid/:id", Controller.paidStatus)
+router.post("/upload/:id", upload.single('file'), Controller.upload);
+
+router.get("/paid/:id", Controller.paidStatus);
 
 router.get("/show-content/:id", Controller.showContent);
 
 router.get("/order/:id", Controller.orderPay);
-
-router.post("/upload", upload.single('file'), Controller.upload);
 
 router.get("/my-course", Controller.myCourse);
 
