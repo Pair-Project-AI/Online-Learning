@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     currency(){
       return `Rp. ${this.price.toLocaleString("id-ID")}`
     }
+
+    capslock(){
+      return `${this.title.toUpperCase()}`
+    }
   };
   Video.init({
     title: DataTypes.STRING,

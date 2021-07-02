@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Subject.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    paid: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Subject',

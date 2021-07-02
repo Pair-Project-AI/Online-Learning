@@ -1,5 +1,6 @@
 const {User, Video, Subject} = require("../models");
-const currency = require("../helper/totalPrice")
+const currency = require("../helper/totalPrice");
+const bcrypt = require("bcryptjs");
 
 class Controller {
     static homePage(req, res){
@@ -11,7 +12,6 @@ class Controller {
                 }]
             })
             .then(data => {
-                console.log(data[0].Videos)
                 const isLogin = req.session.isLogin;
                 res.render("index", {data, isLogin, currency})
             })
@@ -25,14 +25,24 @@ class Controller {
 
     static loginAccept(req, res){
         const {email, password} = req.body;
+        let match;
         User
-        .findOne({where: {email}})
-        .then(result => {
+            .findOne({where: {email}})
+            .then(result => {
+                const hash = result.password;
+                match = bcrypt.compareSync(password,hash);
+                if(match){
+                    return match
+                } else {
+                    throw new Error("Password salah")
+                }
+            })
+            .then(() => {
                 req.session.isLogin = true;
                 res.redirect("/")
             })
             .catch(err => {
-                res.send(err)
+                res.redirect("/login")
             })
     }
 
@@ -70,7 +80,8 @@ class Controller {
                 }
             })
             .then(data => {
-                res.render("show-content", {data, currency})
+                const isLogin = req.session.isLogin;
+                res.render("show-content", {data, isLogin, currency})
             })
             .catch(err => {
                 res.send(err)
@@ -86,7 +97,22 @@ class Controller {
                 }
             })
             .then(data => {
-                res.render("order", {data, currency})
+                const isLogin = req.session.isLogin;
+                res.render("order", {data, isLogin, currency, id})
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static paidStatus(req, res){
+        const id = req.params.id;
+        Subject
+            .update({paid: true}, {
+                where:{id}
+            })
+            .then(() => {
+                res.redirect("/my-course")
             })
             .catch(err => {
                 res.send(err)
@@ -101,7 +127,22 @@ class Controller {
                 }
             })
             .then(data => {
-                res.render("myCourse", {data})
+                const isLogin = req.session.isLogin;
+                res.render("myCourse", {data, isLogin})
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static finishedSubject(req, res){
+        const id = req.params.id;
+        Subject
+            .update({paid: 0}, {
+                where: {id}
+            })
+            .then(() => {
+                res.redirect("/my-course")
             })
             .catch(err => {
                 res.send(err)

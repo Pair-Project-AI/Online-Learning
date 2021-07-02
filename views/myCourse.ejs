@@ -26,8 +26,8 @@
                                     <a href="/show-content/<%= el.id%>" style="text-decoration: none; color: black;"><p style="font-size: 22px;"><b><%= el.name%></b></p></a>
                                     <div class="d-flex justify-content-between align-items-center mt-4">
                                         <small class="text-muted"><i class="fas fa-sm fa-user"></i> OnLearn Team</small>
-                                        <a href="/lesson/<%= data.id%>" class="btn btn-sm btn-primary">START</a>
-                                        <a href="/delete/<%= data.id%>" class="btn btn-sm btn-danger">FINISH</a>
+                                        <a href="/lesson/<%= el.id%>" class="btn btn-sm btn-primary">START</a>
+                                        <a href="/finish/<%= el.id%>" class="btn btn-sm btn-danger">FINISH</a>
                                     </div>
                                 </div>
                             </div>
