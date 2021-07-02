@@ -28,10 +28,10 @@
                             <% })%>
                             <small>Total: <b><%= currency(totalPrice)%></b></small>
                         </div>
-                        <form>
+                        <form action="/upload" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="file" class="form-label">Upload proof of transfer</label>
-                                    <input type="file" class="form-control" id="file">
+                                    <input type="file" class="form-control" id="file" name="file">
                                 </div>
                                 <button type="submit" class="btn btn-primary d-block">UPLOAD FILE</button>
                             </div>

@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Video.init({
     title: DataTypes.STRING,
-    price: DataTypes.INTEGER
+    price: DataTypes.INTEGER,
+    SubjectId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Video',
