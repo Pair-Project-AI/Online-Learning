@@ -3,10 +3,7 @@ const router = express.Router();
 const Controller = require("../controllers/controller");
 // upload file
 const multer  = require('multer')
-// const upload = multer({ dest: 'uploads/' })
-
 var upload = multer({ storage: storage })
-
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './public/upload');
