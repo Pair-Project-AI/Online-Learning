@@ -153,6 +153,13 @@ class Controller {
         req.session.destroy();
         res.redirect("/")
     }
+
+    static upload(req, res) {
+        res.send(req.file)
+        console.log(req.file)
+        console.log(req.body)
+        // /public/upload/ + 16-sq.jpg
+    }
 }
 
 module.exports = Controller

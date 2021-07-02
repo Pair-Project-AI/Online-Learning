@@ -1,6 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Controller = require("../controllers/controller");
+// upload file
+const multer  = require('multer')
+var upload = multer({ storage: storage })
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './public/upload');
+    },
+    filename: function (req, file, cb) {
+        cb(null , file.originalname);
+    }
+});
 
 const proceed = (req, res, next) => {
     if(req.session.isLogin){
@@ -28,9 +39,11 @@ router.get("/show-content/:id", Controller.showContent);
 
 router.get("/order/:id", Controller.orderPay);
 
+router.post("/upload", upload.single('file'), Controller.upload);
+
 router.get("/my-course", Controller.myCourse);
 
-router.get("/finish/:id", Controller.finishedSubject)
+router.get("/finish/:id", Controller.finishedSubject);
 
 router.get("/logout", Controller.logOut);
 
